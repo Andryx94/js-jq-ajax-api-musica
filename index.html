@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ex-dischi-musicali</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <!-- Header con selettore genere -->
+      <header>
+          <div class="container flex">
+              <img src="img/logo.png" alt="logo" />
+              <select class="select" name="">
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Metal">Metal</option>
+                <option value="Jazz">Jazz</option>
+              </select>
+          </div>
+      </header>
+      <!-- fine Header con selettore genere -->
+
+      <!-- Container cd -->
+      <div class="cds-container container">
+      </div>
+      <!-- fine container cd -->
+
+      <!-- template Handlebars -->
+      <script id="template" type="text/x-handlebars-template">
+        <div class="cd {{genre}} hidden">
+          <img src="{{poster}}" alt="">
+          <h3>{{title}}</h3>
+          <span class="author">{{author}}</span>
+          <span class="year">{{year}}</span>
+        </div>
+      </script>
+      <!-- fine template Handlebars-->
+
+      <!-- script JS -->
+      <script src="js/script.js" charset="utf-8"></script>
+      <!-- fine script JS -->
+    </body>
+</html>
