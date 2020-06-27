@@ -7,22 +7,28 @@ $(document).ready(
         method: "GET",
         success: function (data) {
           generazioneAlbum(data.response);
-
-          var genere = $(".select").val();
-          var canzone = $(".cds-container .cd");
-
-          canzone.each(function() {
-            if ($(this).hasClass(genere)){
-              $(this).removeClass("hidden")
-            }
-          })
         },
 
         error: function () {
           alert("E' avvenuto un errore. ");
         }
       }
-    );    
+    );
+
+    //avvio funzione al cambio opzione select
+    var select = $(".select");
+    select.change(function(){
+      var genere = $(".select").val();
+      var canzone = $(".cds-container .cd");
+
+      //leggo tutte le canzoni, resetto la classe hidden e la ri-aggiungo se non ha il genere selezionato
+      canzone.each(function() {
+        $(this).removeClass("hidden")
+        if (!$(this).hasClass(genere)){
+          $(this).addClass("hidden")
+        }
+      })
+    })
   }
 );
 

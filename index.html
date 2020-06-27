@@ -14,6 +14,7 @@
           <div class="container flex">
               <img src="img/logo.png" alt="logo" />
               <select class="select" name="">
+                <option value="cd">Genere</option>
                 <option value="Pop">Pop</option>
                 <option value="Rock">Rock</option>
                 <option value="Metal">Metal</option>
@@ -30,7 +31,7 @@
 
       <!-- template Handlebars -->
       <script id="template" type="text/x-handlebars-template">
-        <div class="cd {{genre}} hidden">
+        <div class="cd {{genre}}">
           <img src="{{poster}}" alt="">
           <h3>{{title}}</h3>
           <span class="author">{{author}}</span>
