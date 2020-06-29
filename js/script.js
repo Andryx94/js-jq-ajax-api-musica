@@ -18,15 +18,8 @@ $(document).ready(
     //avvio funzione al cambio opzione select
     $(".select").change(function(){
       var genere = $(this).val();
-      var canzone = $(".cds-container .cd");
-
-      //leggo tutte le canzoni, resetto la classe hidden e la ri-aggiungo se non ha il genere selezionato
-      canzone.each(function() {
-        $(this).removeClass("hidden")
-        if (!$(this).hasClass(genere)){
-          $(this).addClass("hidden")
-        }
-      })
+      $(".cds-container .cd").hide();
+      $(".cds-container .cd." + genere).show();
     })
   }
 );
