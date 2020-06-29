@@ -16,9 +16,8 @@ $(document).ready(
     );
 
     //avvio funzione al cambio opzione select
-    var select = $(".select");
-    select.change(function(){
-      var genere = $(".select").val();
+    $(".select").change(function(){
+      var genere = $(this).val();
       var canzone = $(".cds-container .cd");
 
       //leggo tutte le canzoni, resetto la classe hidden e la ri-aggiungo se non ha il genere selezionato
